@@ -6,7 +6,7 @@ dotenv.load_dotenv()
 
 class Apartment(ABC):
 
-    def __init__(self, room_list, meter_price, price_arnona):
+    def __init__(self, room_list, meter_price, price_arnona, discount_arnona=1):
         """
         Constructor the class Apartment
         :param room_list:
@@ -17,6 +17,7 @@ class Apartment(ABC):
         self.price = meter_price
         self.price_arnona = price_arnona
         self._kitchen = "kitchen"
+        self.discount_arnona = discount_arnona
 
     # this method will be implemented by the inherited classes
     @abstractmethod
@@ -51,3 +52,11 @@ class Apartment(ABC):
         :return:
         """
         del self._kitchen
+
+    def apartment_area(self):
+        return sum(self.room_list)
+
+    # this method will be implemented by the inherited classes
+    @abstractmethod
+    def apartment_price(self):
+        pass
