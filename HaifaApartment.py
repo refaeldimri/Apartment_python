@@ -8,9 +8,9 @@ dotenv.load_dotenv()
 class HaifaApartment(Apartment):
 
     def __init__(self, room_list,
-                 meter_price, price_arnona, discount_arnona=1):
+                 meter_price, price_arnona, discount_arnona=0):
         """
-        Constructor the HerzliyaApartment class
+        Constructor the HaifaApartment class
         :param room_list:
         :param meter_price:
         :param price_arnona:
@@ -31,7 +31,7 @@ class HaifaApartment(Apartment):
                  else room_size * self.price_arnona * float(os.getenv("DISCOUNT"))
                  for index, room_size in enumerate(self.room_list)
             ]
-        return sum(list_arnona_by_rooms) * self.discount_arnona
+        return sum(list_arnona_by_rooms) * (1 - self.discount_arnona)
 
     def apartment_price(self):
         pass
