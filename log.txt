@@ -1,0 +1,62 @@
+maximum recursion depth exceeded, 01/02/2023 10:47:11
+maximum recursion depth exceeded, 01/02/2023 10:48:27
+'HerzliyaApartment' object has no attribute 'price_arnona', 01/02/2023 10:49:52
+'HerzliyaApartment' object has no attribute 'price_arnona', 01/02/2023 10:51:26
+'HerzliyaApartment' object has no attribute 'price_arnona', 01/02/2023 10:52:55
+'HerzliyaApartment' object has no attribute 'price_arnona', 01/02/2023 10:53:12
+'HerzliyaApartment' object has no attribute 'price_arnona', 01/02/2023 10:54:06
+can't multiply sequence by non-int of type 'float', 01/02/2023 11:27:56
+can't multiply sequence by non-int of type 'float', 01/02/2023 11:28:10
+can't multiply sequence by non-int of type 'float', 01/02/2023 11:28:27
+test_calc_arnona_herzliya_positive is PASS, 01/02/2023 11:50:08
+test_calc_arnona_herzliya_positive is PASS, 01/02/2023 11:50:53
+test_calc_arnona_herzliya_positive is FAILED, 01/02/2023 11:54:51
+test_calc_arnona_herzliya_positive is PASS, 01/02/2023 11:55:13
+test_calc_arnona_herzliya_positive is FAILED, 01/02/2023 11:56:00
+test_calc_arnona_herzliya_positive is PASS, 01/02/2023 11:56:15
+test_calc_arnona_herzliya_positive is PASS, 01/02/2023 11:57:23
+test_calc_arnona_herzliya_negative is FAILED, 01/02/2023 12:00:49
+test_calc_arnona_herzliya_positive is PASS, 01/02/2023 13:03:14
+__init__ is FAILED, 01/02/2023 13:07:26
+test_calc_arnona_herzliya_positive is PASS, 01/02/2023 13:07:26
+__init__ is FAILED, 01/02/2023 13:08:39
+__init__ is FAILED, 01/02/2023 13:09:38
+test_calc_arnona_herzliya_positive is PASS, 01/02/2023 13:11:30
+test_calc_arnona_herzliya_positive is FAILED, 01/02/2023 13:11:36
+test_calc_arnona_herzliya_positive is PASS, 01/02/2023 13:13:37
+test_calc_arnona_herzliya_positive is PASS, 01/02/2023 13:13:59
+test_calc_arnona_herzliya_positive is FAILED, 01/02/2023 13:14:08
+test_calc_arnona_herzliya_positive is PASS, 01/02/2023 13:14:39
+test_calc_arnona_herzliya_positive is PASS, 01/02/2023 13:17:37
+test_calc_arnona_herzliya_positive is FAILED, 01/02/2023 13:17:43
+test_calc_arnona_herzliya_positive is FAILED, 01/02/2023 13:20:46
+test_calc_arnona_herzliya_positive is PASS, 01/02/2023 13:21:23
+test_calc_arnona_herzliya_positive is FAILED, 01/02/2023 13:21:38
+test_calc_arnona_herzliya_negative is FAILED, 01/02/2023 13:23:34
+test_calc_arnona_herzliya_negative is FAILED, 01/02/2023 13:23:45
+test_calc_apartment_price_positive is FAILED, 01/02/2023 13:50:25
+test_calc_apartment_price_positive is FAILED, 01/02/2023 13:50:30
+test_calc_apartment_price_positive is FAILED, 01/02/2023 13:52:39
+test_calc_apartment_price_positive is PASS, 01/02/2023 13:53:03
+test_get_set_room_list is PASS, 01/02/2023 13:56:09
+test_get_set_room_list is FAILED, 01/02/2023 13:56:14
+test_get_set_room_list is FAILED, 01/02/2023 13:56:26
+test_get_set_room_list is PASS, 01/02/2023 13:58:06
+test_apartment_area is PASS, 01/02/2023 13:58:49
+test_apartment_area is FAILED, 01/02/2023 13:58:59
+test_get_set_room_list is FAILED, 01/02/2023 13:59:58
+__init__ is FAILED, 01/02/2023 14:01:54
+__init__ is FAILED, 01/02/2023 14:03:28
+test_calc_arnona_herzliya is PASS, 01/02/2023 14:11:21
+test_calc_arnona_haifa is FAILED, 01/02/2023 14:19:46
+test_calc_arnona_haifa is PASS, 01/02/2023 14:20:48
+test_calc_arnona_haifa is FAILED, 01/02/2023 14:21:02
+test_calc_arnona_haifa is PASS, 01/02/2023 14:22:17
+test_apartment_area is PASS, 01/02/2023 14:22:51
+test_calc_apartment_price is PASS, 01/02/2023 14:23:19
+test_calc_apartment_price is FAILED, 01/02/2023 14:23:28
+test_get_set_room_list is PASS, 01/02/2023 14:26:45
+test_get_set_room_list is PASS, 01/02/2023 14:28:25
+test_get_set_room_list is FAILED, 01/02/2023 14:28:29
+test_apartment_area is PASS, 01/02/2023 14:28:52
+test_apartment_area is FAILED, 01/02/2023 14:29:00

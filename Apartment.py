@@ -1,40 +1,34 @@
+import inspect
+import sys
 from abc import ABC, abstractmethod
 import dotenv
 import os
+from apartments.Utilities import Utilities
+
 dotenv.load_dotenv()
 
 
 class Apartment(ABC):
+    utilities = Utilities()
 
-    def __init__(self, room_list, meter_price, price_arnona, discount_arnona=0):
+    def __init__(self, room_list, meter_price,
+                 price_arnona, discount_arnona=0):
         """
         Constructor the class Apartment
         :param room_list:
         :param meter_price:
         :param price_arnona:
         """
-        if not isinstance(meter_price, int) and not isinstance(meter_price, float):
-            raise ValueError(os.getenv("METER_PRICE_IS_NOT_NUMBER"))
-        if meter_price <= 0:
-            raise ValueError(os.getenv("METER_PRICE_IS_NOT-POSITIVE"))
-        if not isinstance(price_arnona, int) and not isinstance(price_arnona, float):
-            raise ValueError(os.getenv("price_arnona_is_not_number"))
-        if price_arnona <= 0:
-            raise ValueError(os.getenv("price_arnona_is_not_positive"))
-        if discount_arnona < 0 or discount_arnona > 1:
-            raise ValueError(os.getenv("DISCOUNT_ARNONA_IS_NOT_FRACTION"))
-        if not isinstance(discount_arnona, int) and not isinstance(discount_arnona, float):
-            raise ValueError(os.getenv("DISCOUNT_ARNONA_IS_NOT_NUMBER"))
-        if not isinstance(room_list, list):
-            raise ValueError(os.getenv("ROOM_LIST_IS_NOT_LIST"))
-        if all([isinstance(item, int) for item in room_list]) and all([isinstance(item, float) for item in room_list]):
-            raise ValueError(os.getenv("ROOM_LIST_CONTAINS_CHARS_OR_NEG_NUMBER"))
-
-        self.room_list = room_list
-        self.price = meter_price
-        self.price_arnona = price_arnona
-        self._kitchen = "kitchen"
-        self.discount_arnona = discount_arnona
+        try:
+            self.utilities.check_parameter_apartment(room_list, meter_price, price_arnona, discount_arnona)
+        except ValueError:
+            self.utilities.write_to_file(str(inspect.currentframe().f_code.co_name) + " " + "object is does not created")
+            sys.exit(1)
+        self._room_list = room_list
+        self._meter_price = meter_price
+        self._price_arnona = price_arnona
+        self._kitchen = os.getenv("KITCHEN_TYPE")
+        self._discount_arnona = discount_arnona
 
     # this method will be implemented by the inherited classes
     @abstractmethod
@@ -44,6 +38,74 @@ class Apartment(ABC):
         :return int:
         """
         pass
+
+    @property
+    def room_list(self):
+        """
+        Property GET to room_list field
+        :return self.room_list:
+        """
+        return self._room_list
+
+    @room_list.setter
+    def room_list(self, list_of_rooms):
+        """
+        SET value to room_list field
+        :param list_of_rooms:
+        :return:
+        """
+        self._room_list = list_of_rooms
+
+    @property
+    def meter_price(self):
+        """
+        Property GET to meter_price field
+        :return self.room_list:
+        """
+        return self._meter_price
+
+    @meter_price.setter
+    def meter_price(self, price_per_meter):
+        """
+        SET value to meter_price field
+        :param price_per_meter:
+        :return:
+        """
+        self.meter_price = price_per_meter
+
+    @property
+    def price_arnona(self):
+        """
+        Property GET to price_arnona field
+        :return self.price_arnona:
+        """
+        return self._price_arnona
+
+    @price_arnona.setter
+    def price_arnona(self, arnona):
+        """
+        SET value to price_arnona field
+        :param price_arnona:
+        :return:
+        """
+        self._price_arnona = arnona
+
+    @property
+    def discount_arnona(self):
+        """
+        Property GET to price_arnona field
+        :return self.price_arnona:
+        """
+        return self._discount_arnona
+
+    @discount_arnona.setter
+    def discount_arnona(self, discount_arnona):
+        """
+        SET value to price_arnona field
+        :param price_arnona:
+        :return:
+        """
+        self._discount_arnona = discount_arnona
 
     @property
     def kitchen(self):
@@ -71,7 +133,12 @@ class Apartment(ABC):
         del self._kitchen
 
     def apartment_area(self):
-        return sum(self.room_list)
+        """
+        This function get list of room size
+        and return the size of the apartment
+        :return sum of apartment area:
+        """
+        return sum(self._room_list)
 
     # this method will be implemented by the inherited classes
     @abstractmethod

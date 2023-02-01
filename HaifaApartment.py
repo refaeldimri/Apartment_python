@@ -24,14 +24,15 @@ class HaifaApartment(Apartment):
         and the arnona price per meter, the forth room get discount of 50%
         :return: sum of arnona by all the rooms
         """
+
         list_arnona_by_rooms = \
             [
-                 room_size * self.price_arnona
-                 if index != int(os.getenv("DISCOUNT_ROOM"))
-                 else room_size * self.price_arnona * float(os.getenv("DISCOUNT"))
-                 for index, room_size in enumerate(self.room_list)
+                    room_size * self.price_arnona
+                    if index != int(os.getenv("DISCOUNT_ROOM"))
+                    else room_size * self.price_arnona * float(os.getenv("DISCOUNT"))
+                    for index, room_size in enumerate(self.room_list)
             ]
         return sum(list_arnona_by_rooms) * (1 - self.discount_arnona)
 
     def apartment_price(self):
-        pass
+        return self.apartment_area() * self.meter_price
